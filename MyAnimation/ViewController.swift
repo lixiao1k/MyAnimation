@@ -16,10 +16,10 @@ class ViewController: UIViewController {
     
     @IBAction func `switch`(_ sender: UIButton) {
         if(isStarted){
-            switchBtn.setTitle("Stop", for: .normal);
+            switchBtn.setTitle("Start", for: .normal);
             stopAnimation();
         }else{
-            switchBtn.setTitle("Start", for: .normal);
+            switchBtn.setTitle("Stop", for: .normal);
             startAnimation();
         }
     }
