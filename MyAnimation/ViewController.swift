@@ -12,9 +12,16 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var switchBtn: UIButton!
     @IBOutlet weak var img: UIImageView!
+    var isStarted:Bool = true;
     
     @IBAction func `switch`(_ sender: UIButton) {
-        print("Hello");
+        if(isStarted){
+            switchBtn.setTitle("Stop", for: .normal);
+            stopAnimation();
+        }else{
+            switchBtn.setTitle("Start", for: .normal);
+            startAnimation();
+        }
     }
     
     override func viewDidLoad() {
@@ -41,15 +48,14 @@ class ViewController: UIViewController {
         startAnimation();
     }
     func startAnimation() {
+        isStarted = true;
         img.startAnimating();
     }
     
     func stopAnimation(){
+        isStarted = false;
         img.stopAnimating();
     }
-    func open() {
-    }
-
 
 }
 
